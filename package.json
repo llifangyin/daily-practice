@@ -1,0 +1,23 @@
+{
+  "name": "daily-practice",
+  "version": "1.0.0",
+  "description": "dialy practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llifangyin/daily-practice.git"
+  },
+  "keywords": [
+    "javascript",
+    "practice"
+  ],
+  "author": "lifangyin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llifangyin/daily-practice/issues"
+  },
+  "homepage": "https://github.com/llifangyin/daily-practice#readme"
+}
