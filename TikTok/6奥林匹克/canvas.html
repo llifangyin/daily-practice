@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ 
+<body>
+    <div id="app">
+        <canvas id="canvas" width="1000px" height="1000px"></canvas>
+    </div>
+</body>
+<script>
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext('2d');
+ 
+    // 第二种方法 封装函数
+    var radius = 100;//半径
+    ctx.lineWidth = 25;//线宽
+ 
+    function draw(x, y, startAngle, endAngle, color) {
+        ctx.beginPath();//新建一条路径
+        ctx.strokeStyle = color;//控制色彩
+        ctx.moveTo(x + radius * Math.cos(startAngle), y + radius * Math.sin(startAngle));//设置起始位置
+        ctx.arc(x, y, radius, startAngle, endAngle, false);//圆心，半径，开始的点，结束的点
+        ctx.stroke();//通过线条绘制图形轮廓
+        ctx.closePath();//闭合路径
+    }
+    draw(275, 360, 1.2 * Math.PI, 1.5 * Math.PI, '#fda811');//4-黄-上左
+    draw(160, 250, 0, 2 * Math.PI, '#3b7cb6');//1-蓝
+    draw(275, 360, -0.2 * Math.PI, 1.2 * Math.PI, '#fda811');//4-黄-下
+    draw(525, 360, 1.2 * Math.PI, 1.5 * Math.PI, '#2d9b2b');//5-绿-上左
+    draw(400, 250, 0, 2 * Math.PI, '#150f11');//2-黑
+    draw(640, 250, 0.8 * Math.PI, 2 * Math.PI, '#fc0203');//3-红-上
+    draw(275, 360, 1.5 * Math.PI, 1.8 * Math.PI, '#fda811');//4-黄-上右
+    draw(525, 360, -0.5 * Math.PI, 1.2 * Math.PI, '#2d9b2b');//5-绿-下-上左
+    draw(640, 250, 0, 0.8 * Math.PI, '#fc0203');//3-红-下
+ 
+</script>
+ 
+</html>
