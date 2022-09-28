@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        div{
+            margin: 20px auto;
+            width:135px;
+            height: 150px;
+            background: url('./img/img3.webp') no-repeat;
+            /* background-position-x: -10px; */
+            /* animation:  run 2s infinite; */
+            animation: run 1s steps(7) infinite;
+            /* 7表示平均分成7等份 */
+        }
+        @keyframes run {
+            0% {
+                background-position-x: -10px;
+            }
+            100%{
+                background-position-x: -939px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
