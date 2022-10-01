@@ -32,3 +32,9 @@ FATAL ERROR: Scavenger: semi-space copy Allocation failed - JavaScript heap out 
 
 s1+s1 == str1+ s2 + str2
 str2 + str1 == s2
+
+```js
+ return (s1+s1).indexOf(s2)>-1&&s1.length==s2.length
+```
+
+> **总结，通过笨方法是效率最低的事情，而且可能造成运行慢，堆栈溢出等问题，找到问题的规律，巧化解题步骤。**
