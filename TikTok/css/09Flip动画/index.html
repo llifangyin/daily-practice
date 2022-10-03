@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            border: 1px solid #e2e2e2;
+            width: 150px;
+            transform-style: preserve-3d;
+        }
+        li{
+            list-style: none;
+            width: 80px;
+            background-color: bisque;
+            border-radius: 15px;
+            margin: 5px 0;
+            padding: 5px 20px;
+            font-size: 12px;
+            transition:0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <button >
+        排序
+    </button>
+    <ul class="list">
+        <li>英雄联盟</li>
+        <li>云顶之弈</li>
+        <li>穿越火线</li>
+        <li>火影忍者</li>
+        <li>绝地求生</li>
+        <li>刺激战场</li>
+        <li>和平精英</li>
+        <li>王者荣耀</li>
+        <li>开心消消乐</li>
+    </ul>
+    <script>
+       var listContainer = document.querySelector('.list')
+       var btn = document.querySelector('button')
+       var f = new Flip(listContainer.children)
+       btn.onclick = function(){
+        var len = listContainer.children.length
+        var index = 0
+        while (index < len -1){
+            var node = listContainer.children[index]
+            var insert = listContainer.children[len - 1]
+            listContainer.insertBefore(insert,node)
+            index ++
+        }
+        f.play()
+       }
+    //    实现Flip构造函数
+    
+       function Flip(list){
+        this.list = list //当前list对象
+
+        this.initList = []//初始dom对象arr
+        this.initTopArr = []//初始list对象 top值
+        this.finalTopArr = [] // 移动后list对象top值
+
+        this.difArr = []
+        // 记录初始化位置
+        this.init = function(){
+            let arr = Array.prototype.slice.call(this.list)
+            arr.forEach((item,index)=>{
+                this.initTopArr.push(item.offsetTop)
+                this.initList.push(item)
+            })
+        }
+        this.play = function(){
+            // 存储动画结束位置
+            
+            // console.log(this.initList);
+            this.initList.forEach((item,index)=>{
+                this.finalTopArr.push(item.offsetTop)
+            })
+            // console.log(this.initTopArr);
+            // console.log(this.finalTopArr);
+            
+            for(i=0;i<this.list.length;i++){
+                this.difArr.push(this.finalTopArr[i]- this.initTopArr[i])
+            }
+
+            console.log(this.difArr);
+            // 反转元素到起始位置
+            for(i=0;i<this.list.length;i++){
+                this.list[i].style.transform = 'translateY('+this.difArr[i]+'px)'
+            }
+
+            // play 移除动画，添加transiton
+
+            
+            // setTimeout(() => {
+            //     for(i=0;i<this.list.length;i++){
+            //         this.list[i].style.transform = 'initial'
+            //     }
+            // }, 1500);
+            
+
+        }
+        this.init()
+       }
+    </script>
+</body>
+</html>
