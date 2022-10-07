@@ -3,28 +3,28 @@ function ListNode(val, next) {
     this.next = (next === undefined ? null : next)
 }
 
-
-var addTwoNumbers = function (l1, l2) {
-    function newListNode(arr3){
-        let node ;
-        var i = arr3.length - 1
-        while (i > -1) {
-            // 对node初始化赋值
-            if(i == arr3.length-1){
-                 node = new ListNode(arr3[i])
-            }else{
-                let next = new ListNode(arr3[i])
-                // 找到最后一个赋值
-                let current = node
-                while(current.next){
-                    current = current.next
-                }
-                current.next = next
+function newListNode(arr3){
+    let node ;
+    var i = arr3.length - 1
+    while (i > -1) {
+        // 对node初始化赋值
+        if(i == arr3.length-1){
+             node = new ListNode(arr3[i])
+        }else{
+            let next = new ListNode(arr3[i])
+            // 找到最后一个赋值
+            let current = node
+            while(current.next){
+                current = current.next
             }
-            i--
+            current.next = next
         }
-        return node
+        i--
     }
+    return node
+}
+var addTwoNumbers = function (l1, l2) {
+    
     var arr1 = []
     while (l1.next) {
         arr1.push(l1.val)
