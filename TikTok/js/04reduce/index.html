@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // Array.prototype.reduce
+
+        // reduce方法对对数组的每个元素按序执行一个由你提供的reducer函数
+        // 每一次运行reducer会将先前元素的计算结果作为参数传入
+        // 最后将其结果汇总为单位返回的值
+
+        // 第一次执行回调函数时，不存在上一次的计算结果。如果回调函数从数组索引为0的元素开始执行
+        // 则需要传递初始值，否则数组索引为0的元素会作为初始值initialValue，迭代器将会从第二个元素开始执行
+
+        // exp：
+        const arr = [1, 2, 3, 4]
+        const initValue = 0
+        const sumWithInitValue = arr.reduce(
+            (pre, cur) => pre + cur,
+            initValue
+        )
+        console.log(sumWithInitValue);
+    </script>
+</body>
+
+</html>
