@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局</title>
+    <style>
+        .default{
+            display: flex;
+            /* flex-direction: row; 默认 */
+            /* flex-wrap: wrap; */
+
+            flex-flow: row nowrap;
+
+        }
+        .default div{
+            flex-basis: content;
+        }
+        .box {
+        display: flex;
+      }
+
+      .one {
+        flex: 1;
+      }
+
+      .two {
+        flex: 1;
+      }
+
+      .three {
+        flex: 1;
+      }
+  
+    </style>
+</head>
+<body>
+    <h3>felx容器的默认行为</h3>
+    <div class="default">
+        <!-- <p>111</p> -->
+        <div class="item">
+            <div>11111</div>
+            <div>2222</div>
+            <div>33333</div>
+        </div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est molestiae provident reprehenderit perspiciatis quod aspernatur sed necessitatibus quas, ea, voluptatibus expedita numquam cupiditate tenetur voluptatem exercitationem similique obcaecati debitis neque!</div>
+        <div>
+            <span>Lorem ipsum dolor sit amet consectetur us hic.</span>
+            <div>test</div>
+        </div>
+        <!-- <p>333</p> -->
+    </div>
+
+    <div class="box">
+        <div class="one">One</div>
+        <div class="two">Two</div>
+        <div class="three">Three</div>
+      </div>
+</body>
+</html>
